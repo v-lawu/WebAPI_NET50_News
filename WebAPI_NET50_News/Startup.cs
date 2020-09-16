@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI_NET50_News.Data;
 
 namespace WebAPI_NET50_News
 {
@@ -26,7 +28,9 @@ namespace WebAPI_NET50_News
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<NewsContext>(opt => opt.UseInMemoryDatabase("NewsList"));
+            services.AddDbContext<CategoryContext>(opt => opt.UseInMemoryDatabase("CategoryList"));
+            services.AddDbContext<UserContext>(opt => opt.UseInMemoryDatabase("UserList"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -54,6 +58,9 @@ namespace WebAPI_NET50_News
             {
                 endpoints.MapControllers();
             });
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
         }
     }
 }

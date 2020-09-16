@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Add News</title>
+    <script src="js/news.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+</head>
+<body onload="getCategory()">
+    <a href="addCategory.html">back</a>
+    <div style="width: 382px; border-radius: 15px; margin: auto; ">
+        <label>Title</label>
+        <br>
+        <input type="text" name="Title" id="Title" />
+        <br><br>
+        <label>Context</label>
+        <br>
+        <input type="Password" name="Context" id="Context" />
+        <br><br>
+        <label>DateTime</label>
+        <br>
+        <input type="date" name="Datetime" id="DateTime" />
+        <br><br>
+        <label>Category</label>
+        <br>
+        <select name="Categories" id="Categories" class="selectText">
+        </select>
+        <br><br>
+        <form action="javascript:void(0);" onsubmit="addNews()" method="post">
+            <button type="submit" id="Add">Add</button>
+        </form>
+        <br><br>
+    </div>
+    <!--<script type="text/javascript">
+        function showDate() {
+            var currentDate = new Date();
+            var textDate = "";
+            textDate = currentDate.getFullYear() + "/";
+            textDate = textDate + (currentDate.getMonth() + 1) + "/";
+            textDate = textDate + currentDate.getDate() + " ";
+            textDate = textDate + currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+            document.getElementById("Datetime").innerHTML = textDate;
+            setTimeout("show()", 1000);
+        }
+    </script>-->
+</body>
+</html>

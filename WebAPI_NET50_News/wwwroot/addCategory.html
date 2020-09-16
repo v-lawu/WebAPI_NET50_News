@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="js/category.js"></script>
+</head>
+<body>
+    <div style="width: 382px; border-radius: 15px; margin: auto; ">
+        <label>Category</label>
+        <br>
+        <input type="text" name="Category" id="Category" />
+        <br><br>
+        <form action="javascript:void(0);" onsubmit="addCategory()" method="post">
+            <button type="submit" id="Add">Add</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function reLoad() {
+            window.location.href = 'addNews.html';
+        }
+    </script>
+</body>
+</html>

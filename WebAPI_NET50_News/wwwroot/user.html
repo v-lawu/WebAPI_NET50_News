@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Add User</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script src="js/user.js"></script>
+</head>
+<body>
+    <div>
+        <label id="Checker"></label>
+    </div>
+    <div style="width: 382px; border-radius: 15px; margin: auto; ">
+        <label>User Name</label>
+        <br>
+        <input type="text" name="Uname" id="Uname" />
+        <br><br>
+        <label>Password</label>
+        <br>
+        <input type="Password" name="Pass" id="Pass" />
+        <br><br>
+        <label>Confirm Password</label>
+        <br>
+        <input type="Password" name="ConfirmPass" id="ConfirmPass" />
+        <br><br>
+        <label>Age</label>
+        <br>
+        <input type="text" name="Age" id="Age" />
+        <br><br>
+        <form action="javascript:void(0);" onsubmit="addUser()" method="post">
+            <button type="submit" id="Add">Add</button>
+        </form>
+        <br><br>
+    </div>
+</body>
+</html>
